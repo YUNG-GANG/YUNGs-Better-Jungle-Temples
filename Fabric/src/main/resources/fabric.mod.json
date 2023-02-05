@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_full_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "YUNGNICKYOUNG",
+    "Acarii"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/yungs-better-jungle-temples-fabric",
+    "sources": "https://github.com/yungnickyoung/YUNGs-Better-Jungle-Temples",
+    "issues": "https://github.com/yungnickyoung/YUNGs-Better-Jungle-Temples/issues",
+    "discord": "discord.gg/rns3beq"
+  },
+  "license": "LGPLv3",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesFabric"
+    ],
+    "modmenu": [
+      "com.yungnickyoung.minecraft.betterjungletemples.config.gui.BJTModMenu"
+    ]
+  },
+  "mixins": [
+    "betterjungletemples.mixins.json",
+    "betterjungletemples_fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "fabric": ">=0.60.0",
+    "minecraft": ">=1.19.2",
+    "cloth-config2": ">=8.0.75",
+    "java": ">=17",
+    "yungsapi": ">=${minecraft_version}-Fabric-${yungsapi_version}"
+  }
+}

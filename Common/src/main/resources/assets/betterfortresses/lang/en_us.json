@@ -1,0 +1,6 @@
+{
+  "Use /locate structure betterjungletemples:jungle_temple instead!": "Use /locate structure betterjungletemples:jungle_temple instead!",
+  "text.autoconfig.betterjungletemples-fabric-1_19.title": "YUNG's Better Jungle Temples",
+  "text.autoconfig.betterjungletemples-fabric-1_19.option.general.disableVanillaJungleTemples": "Disable Vanilla Jungle Temples",
+  "text.autoconfig.betterjungletemples-fabric-1_19.option.general.disableVanillaJungleTemples.@Tooltip": "Whether vanilla Jungle Temples should be disabled."
+}

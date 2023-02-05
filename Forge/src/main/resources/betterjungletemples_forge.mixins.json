@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.yungnickyoung.minecraft.betterjungletemples.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "betterjungletemples.refmap.json",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

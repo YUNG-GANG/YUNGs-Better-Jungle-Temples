@@ -1,0 +1,158 @@
+{
+  "processors": [
+    {
+      "processor_type": "betterjungletemples:waterlog_processor"
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "target_block": {
+        "Name": "minecraft:granite"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:cobblestone"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone"
+            },
+            "probability": 0.4
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:moss_block"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:grass_block"
+            },
+            "probability": 0.05
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:cobblestone_slab"
+            },
+            "probability": 0.1
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone_slab"
+            },
+            "probability": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "target_block": {
+        "Name": "minecraft:polished_granite"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:cobblestone"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone"
+            },
+            "probability": 0.4
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:infested_cobblestone"
+            },
+            "probability": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "target_block": {
+        "Name": "minecraft:smooth_red_sandstone"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:stone_bricks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "randomize_facing": true,
+      "target_block": {
+        "Name": "minecraft:red_sandstone"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:stone_bricks"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_bricks"
+            },
+            "probability": 0.6
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:stone_brick_slab"
+            },
+            "probability": 0.6
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_brick_slab"
+            },
+            "probability": 0.6
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:stone_brick_stairs"
+            },
+            "probability": 0.6
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_brick_stairs"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "copy_input_properties": true,
+      "target_block": {
+        "Name": "minecraft:red_sandstone_stairs"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:stone_brick_stairs"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_brick_stairs"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    }
+  ]
+}
