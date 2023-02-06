@@ -11,6 +11,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -66,17 +67,33 @@ public class BlockReplaceProcessor extends StructureProcessor {
 
             if (this.copyInputProperties) {
                 if (blockInfoGlobal.state.hasProperty(StairBlock.FACING) && outputState.hasProperty(StairBlock.FACING)) {
-                    outputState.setValue(StairBlock.FACING, blockInfoGlobal.state.getValue(StairBlock.FACING));
+                    outputState = outputState.setValue(StairBlock.FACING, blockInfoGlobal.state.getValue(StairBlock.FACING));
                 }
                 if (blockInfoGlobal.state.hasProperty(StairBlock.HALF) && outputState.hasProperty(StairBlock.HALF)) {
-                    outputState.setValue(StairBlock.HALF, blockInfoGlobal.state.getValue(StairBlock.HALF));
+                    outputState = outputState.setValue(StairBlock.HALF, blockInfoGlobal.state.getValue(StairBlock.HALF));
                 }
                 if (blockInfoGlobal.state.hasProperty(StairBlock.SHAPE) && outputState.hasProperty(StairBlock.SHAPE)) {
-                    outputState.setValue(StairBlock.SHAPE, blockInfoGlobal.state.getValue(StairBlock.SHAPE));
+                    outputState = outputState.setValue(StairBlock.SHAPE, blockInfoGlobal.state.getValue(StairBlock.SHAPE));
                 }
                 if (blockInfoGlobal.state.hasProperty(SlabBlock.TYPE) && outputState.hasProperty(SlabBlock.TYPE)) {
-                    outputState.setValue(SlabBlock.TYPE, blockInfoGlobal.state.getValue(SlabBlock.TYPE));
+                    outputState = outputState.setValue(SlabBlock.TYPE, blockInfoGlobal.state.getValue(SlabBlock.TYPE));
                 }
+                if (blockInfoGlobal.state.hasProperty(WallBlock.NORTH_WALL) && outputState.hasProperty(WallBlock.NORTH_WALL)) {
+                    outputState = outputState.setValue(WallBlock.NORTH_WALL, blockInfoGlobal.state.getValue(WallBlock.NORTH_WALL));
+                }
+                if (blockInfoGlobal.state.hasProperty(WallBlock.EAST_WALL) && outputState.hasProperty(WallBlock.EAST_WALL)) {
+                    outputState = outputState.setValue(WallBlock.EAST_WALL, blockInfoGlobal.state.getValue(WallBlock.EAST_WALL));
+                }
+                if (blockInfoGlobal.state.hasProperty(WallBlock.SOUTH_WALL) && outputState.hasProperty(WallBlock.SOUTH_WALL)) {
+                    outputState = outputState.setValue(WallBlock.SOUTH_WALL, blockInfoGlobal.state.getValue(WallBlock.SOUTH_WALL));
+                }
+                if (blockInfoGlobal.state.hasProperty(WallBlock.WEST_WALL) && outputState.hasProperty(WallBlock.WEST_WALL)) {
+                    outputState = outputState.setValue(WallBlock.WEST_WALL, blockInfoGlobal.state.getValue(WallBlock.WEST_WALL));
+                }
+                if (blockInfoGlobal.state.hasProperty(WallBlock.UP) && outputState.hasProperty(WallBlock.UP)) {
+                    outputState = outputState.setValue(WallBlock.UP, blockInfoGlobal.state.getValue(WallBlock.UP));
+                }
+
             }
 
             // Randomize output
