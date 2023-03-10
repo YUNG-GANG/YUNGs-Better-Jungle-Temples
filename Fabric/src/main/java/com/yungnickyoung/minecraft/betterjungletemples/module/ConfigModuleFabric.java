@@ -21,6 +21,7 @@ public class ConfigModuleFabric {
     }
 
     private static void bakeConfig(BJTConfigFabric configFabric) {
-        BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples = configFabric.general.disableVanillaJungleTemples;
+        BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples = configFabric.betterJungleTemples.general.disableVanillaJungleTemples;
+        BetterJungleTemplesCommon.CONFIG.compat.pickYourPoisonEnabled = configFabric.betterJungleTemples.compat.pickYourPoisonEnabled;
     }
 }

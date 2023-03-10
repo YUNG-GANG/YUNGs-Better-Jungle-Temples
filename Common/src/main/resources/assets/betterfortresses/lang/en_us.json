@@ -1,6 +1,16 @@
 {
   "Use /locate structure betterjungletemples:jungle_temple instead!": "Use /locate structure betterjungletemples:jungle_temple instead!",
-  "text.autoconfig.betterjungletemples-fabric-1_19.title": "YUNG's Better Jungle Temples",
-  "text.autoconfig.betterjungletemples-fabric-1_19.option.general.disableVanillaJungleTemples": "Disable Vanilla Jungle Temples",
-  "text.autoconfig.betterjungletemples-fabric-1_19.option.general.disableVanillaJungleTemples.@Tooltip": "Whether vanilla Jungle Temples should be disabled."
+
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.title": "YUNG's Better Jungle Temples",
+
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples": "YUNG's Better Jungle Temples",
+
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general": "General",
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.compat": "Mod Compatibility",
+
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general.disableVanillaJungleTemples": "Disable Vanilla Jungle Temples",
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general.disableVanillaJungleTemples.@Tooltip": "Whether vanilla Jungle Temples should be disabled.",
+
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.compat.pickYourPoisonEnabled": "Enable Pick Your Poison Compatibility",
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.compat.pickYourPoisonEnabled.@Tooltip": "Whether PYP poison darts should spawn in Better Jungle Temples."
 }

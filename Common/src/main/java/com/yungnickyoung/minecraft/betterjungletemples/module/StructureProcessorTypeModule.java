@@ -2,6 +2,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.module;
 
 import com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesCommon;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.BlockReplaceProcessor;
+import com.yungnickyoung.minecraft.betterjungletemples.world.processor.EmptyDispenserProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.LiquidBlockProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.PillarProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.WaterlogProcessor;
@@ -21,4 +22,7 @@ public class StructureProcessorTypeModule {
 
     @AutoRegister("waterlog_processor")
     public static StructureProcessorType<WaterlogProcessor> WATERLOG_PROCESSOR = () -> WaterlogProcessor.CODEC;
+
+    @AutoRegister("empty_dispenser_processor")
+    public static StructureProcessorType<EmptyDispenserProcessor> EMPTY_DISPENSER_PROCESSOR = () -> EmptyDispenserProcessor.CODEC;
 }

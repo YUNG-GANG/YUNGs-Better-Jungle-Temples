@@ -6,6 +6,7 @@
   "mixins": [
     "DisableVanillaJungleTempleMixin",
     "LocateVanillaJungleTempleCommandMixin",
+    "NoVinesInTemplesMixin",
     "StructureTemplateMixin",
     "accessor.StructureManagerAccessor",
     "accessor.StructureProcessorAccessor",

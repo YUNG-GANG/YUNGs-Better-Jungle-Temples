@@ -11,7 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 public class ConfigModuleForge {
     public static void init() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BJTConfigForge.SPEC, "betterjungletemples-forge-1_19.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BJTConfigForge.SPEC, "betterjungletemples-forge-1_19_2.toml");
         MinecraftForge.EVENT_BUS.addListener(ConfigModuleForge::onWorldLoad);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ConfigModuleForge::onConfigChange);
     }
@@ -28,5 +28,6 @@ public class ConfigModuleForge {
 
     private static void bakeConfig() {
         BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples = BJTConfigForge.general.disableVanillaJungleTemples.get();
+        BetterJungleTemplesCommon.CONFIG.compat.pickYourPoisonEnabled = BJTConfigForge.compat.pickYourPoisonEnabled.get();
     }
 }

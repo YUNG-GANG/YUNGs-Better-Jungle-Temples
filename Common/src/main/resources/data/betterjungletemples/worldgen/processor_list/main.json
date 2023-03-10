@@ -4,6 +4,9 @@
       "processor_type": "betterjungletemples:waterlog_processor"
     },
     {
+      "processor_type": "betterjungletemples:empty_dispenser_processor"
+    },
+    {
       "processor_type": "betterjungletemples:pillar_processor",
       "target_block": {
         "Name": "minecraft:orange_stained_glass"
