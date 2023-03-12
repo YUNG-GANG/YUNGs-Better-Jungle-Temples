@@ -7,8 +7,10 @@ import com.yungnickyoung.minecraft.yungsapi.world.BlockStateRandomizer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
@@ -21,6 +23,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluids;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -116,6 +120,13 @@ public class BlockReplaceProcessor extends StructureProcessor {
                     outputState = outputState.setValue(BlockStateProperties.SLAB_TYPE, random.nextBoolean() ? SlabType.TOP : SlabType.BOTTOM);
                 }
             }
+
+            // Schedule fluid tick, if applicable
+            if (levelReader instanceof WorldGenRegion worldGenRegion && (outputState.is(Blocks.WATER) || outputState.is(Blocks.LAVA))) {
+                FlowingFluid fluid = outputState.is(Blocks.WATER) ? Fluids.WATER : Fluids.LAVA;
+                worldGenRegion.scheduleTick(blockInfoGlobal.pos, fluid, 0);
+            }
+
             blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, outputState, blockInfoGlobal.nbt);
         }
         return blockInfoGlobal;

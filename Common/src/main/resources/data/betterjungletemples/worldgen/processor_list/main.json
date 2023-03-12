@@ -10,6 +10,37 @@
       "processor_type": "betterjungletemples:fireball_dispenser_processor"
     },
     {
+      "processor_type": "betterjungletemples:cave_vine_decoration_processor"
+    },
+    {
+      "processor_type": "betterjungletemples:torch_processor"
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "target_block": {
+        "Name": "minecraft:blue_concrete"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:water"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:cobblestone"
+            },
+            "probability": 0.15
+          },
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone"
+            },
+            "probability": 0.15
+          }
+        ]
+      }
+    },
+    {
       "processor_type": "betterjungletemples:pillar_processor",
       "target_block": {
         "Name": "minecraft:orange_stained_glass"
@@ -172,6 +203,26 @@
       "processor_type": "betterjungletemples:block_replace_processor",
       "copy_input_properties": true,
       "target_block": {
+        "Name": "minecraft:cut_red_sandstone_slab"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:stone_brick_slab"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_brick_slab"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "copy_input_properties": true,
+      "target_block": {
         "Name": "minecraft:red_sandstone_wall"
       },
       "output": {
@@ -256,6 +307,26 @@
       "copy_input_properties": true,
       "target_block": {
         "Name": "minecraft:red_sandstone_stairs"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:stone_brick_stairs"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_stone_brick_stairs"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "copy_input_properties": true,
+      "target_block": {
+        "Name": "minecraft:smooth_red_sandstone_stairs"
       },
       "output": {
         "defaultBlockState": {
@@ -398,6 +469,20 @@
             },
             "probability": 0.6
           }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "copy_input_properties": true,
+      "target_block": {
+        "Name": "minecraft:soul_wall_torch"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:wall_torch"
+        },
+        "entries": [
         ]
       }
     }

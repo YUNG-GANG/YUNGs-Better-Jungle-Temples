@@ -2,10 +2,11 @@ package com.yungnickyoung.minecraft.betterjungletemples.module;
 
 import com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesCommon;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.BlockReplaceProcessor;
+import com.yungnickyoung.minecraft.betterjungletemples.world.processor.CaveVineDecorationProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.EmptyDispenserProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.FireballDispenserProcessor;
-import com.yungnickyoung.minecraft.betterjungletemples.world.processor.LiquidBlockProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.PillarProcessor;
+import com.yungnickyoung.minecraft.betterjungletemples.world.processor.TorchProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.WaterlogProcessor;
 import com.yungnickyoung.minecraft.yungsapi.api.autoregister.AutoRegister;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
@@ -18,9 +19,6 @@ public class StructureProcessorTypeModule {
     @AutoRegister("block_replace_processor")
     public static StructureProcessorType<BlockReplaceProcessor> BLOCK_REPLACE_PROCESSOR = () -> BlockReplaceProcessor.CODEC;
 
-    @AutoRegister("liquid_block_processor")
-    public static StructureProcessorType<LiquidBlockProcessor> LIQUID_BLOCK_PROCESSOR = () -> LiquidBlockProcessor.CODEC;
-
     @AutoRegister("waterlog_processor")
     public static StructureProcessorType<WaterlogProcessor> WATERLOG_PROCESSOR = () -> WaterlogProcessor.CODEC;
 
@@ -29,4 +27,10 @@ public class StructureProcessorTypeModule {
 
     @AutoRegister("fireball_dispenser_processor")
     public static StructureProcessorType<FireballDispenserProcessor> FIREBALL_DISPENSER_PROCESSOR = () -> FireballDispenserProcessor.CODEC;
+
+    @AutoRegister("cave_vine_decoration_processor")
+    public static StructureProcessorType<CaveVineDecorationProcessor> CAVE_VINE_DECORATION_PROCESSOR = () -> CaveVineDecorationProcessor.CODEC;
+
+    @AutoRegister("torch_processor")
+    public static StructureProcessorType<TorchProcessor> TORCH_PROCESSOR = () -> TorchProcessor.CODEC;
 }

@@ -1,0 +1,51 @@
+{
+  "name": "betterjungletemples:floor_2_hallway",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 20,
+      "element": {
+        "location": "betterjungletemples:floor_2/floor_2_hallway_0",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "location": "betterjungletemples:floor_2/floor_2_hallway_1",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "location": "betterjungletemples:floor_2/floor_2_hallway_2",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "location": "betterjungletemples:floor_2/floor_2_hallway_3",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "location": "betterjungletemples:floor_2/floor_2_hallway_4",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    }
+  ]
+}
