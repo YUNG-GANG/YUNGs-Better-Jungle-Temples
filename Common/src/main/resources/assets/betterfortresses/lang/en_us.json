@@ -6,7 +6,9 @@
   "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples": "YUNG's Better Jungle Temples",
 
   "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general": "General",
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general.@Tooltip": "General Settings",
   "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.compat": "Mod Compatibility",
+  "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.compat.@Tooltip": "Mod Compatibility Settings",
 
   "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general.disableVanillaJungleTemples": "Disable Vanilla Jungle Temples",
   "text.autoconfig.betterjungletemples-fabric-1_19_2.option.betterJungleTemples.general.disableVanillaJungleTemples.@Tooltip": "Whether vanilla Jungle Temples should be disabled.",
