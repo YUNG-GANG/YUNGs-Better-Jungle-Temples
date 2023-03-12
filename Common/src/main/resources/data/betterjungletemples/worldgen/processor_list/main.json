@@ -341,6 +341,65 @@
           }
         ]
       }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "target_block": {
+        "Name": "minecraft:bricks"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:cobblestone"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "copy_input_properties": true,
+      "target_block": {
+        "Name": "minecraft:granite_slab"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:cobblestone_slab"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone_slab"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "copy_input_properties": true,
+      "target_block": {
+        "Name": "minecraft:polished_granite_slab"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:cobblestone_slab"
+        },
+        "entries": [
+          {
+            "blockState": {
+              "Name": "minecraft:mossy_cobblestone_slab"
+            },
+            "probability": 0.6
+          }
+        ]
+      }
     }
   ]
 }

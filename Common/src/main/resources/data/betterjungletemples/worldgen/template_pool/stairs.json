@@ -1,11 +1,11 @@
 {
-  "name": "betterjungletemples:floor_1_room_back",
+  "name": "betterjungletemples:stairs",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_1/floor_1_room_back_0",
+        "location": "betterjungletemples:stairs/stairs_0",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -14,15 +14,25 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_1/floor_1_room_back_1",
+        "location": "betterjungletemples:stairs/stairs_1",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
-    },    {
+    },
+    {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_1/floor_1_room_back_2",
+        "location": "betterjungletemples:stairs/stairs_2",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:stairs/stairs_3",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
