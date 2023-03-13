@@ -23,6 +23,21 @@
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:floor_2/pit/floor_2_pit_supplementaries",
+        "name": "floor_2_pit_supplementaries",
+        "max_count": 1,
+        "condition": {
+          "type": "yungsapi:mod_loaded",
+          "modid": "supplementaries"
+        },
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
     }
   ]
 }
