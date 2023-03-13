@@ -5,7 +5,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:start_0",
+        "location": "betterjungletemples:start/start_0",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -14,7 +14,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:start_1",
+        "location": "betterjungletemples:start/start_1",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -23,7 +23,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:start_2",
+        "location": "betterjungletemples:start/start_2",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"

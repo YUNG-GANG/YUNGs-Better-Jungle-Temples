@@ -1,20 +1,24 @@
 {
-  "name": "betterjungletemples:floor_1_labyrinth_plate",
+  "name": "betterjungletemples:floor_2_pit",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_1/labyrinth_plate/floor_1_labyrinth_plate_dud",
+        "location": "betterjungletemples:floor_2/pit/floor_2_pit_dripstone",
+        "name": "floor_2_pit_dripstone",
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
     },
     {
-      "weight": 2,
+      "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_1/labyrinth_plate/floor_1_labyrinth_plate_trap",
+        "location": "betterjungletemples:floor_2/pit/floor_2_pit_magma",
+        "name": "floor_2_pit_magma",
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
