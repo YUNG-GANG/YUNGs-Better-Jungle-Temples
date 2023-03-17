@@ -8,5 +8,5 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 
 public class TagModule {
     public static TagKey<Structure> BETTER_JUNGLE_TEMPLE = TagKey.create(Registry.STRUCTURE_REGISTRY,
-            new ResourceLocation(BetterJungleTemplesCommon.MOD_ID, "jungle_temple"));
+            new ResourceLocation(BetterJungleTemplesCommon.MOD_ID, "better_jungle_temples"));
 }

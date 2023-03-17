@@ -2,6 +2,8 @@ package com.yungnickyoung.minecraft.betterjungletemples.mixin;
 
 import com.yungnickyoung.minecraft.betterjungletemples.mixin.accessor.WorldGenRegionAccessor;
 import com.yungnickyoung.minecraft.betterjungletemples.module.TagModule;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.server.level.WorldGenRegion;
@@ -34,10 +36,15 @@ public class NoVinesInTemplesMixin {
 
         Registry<Structure> configuredStructureFeatureRegistry = context.level().registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY);
         StructureManager structureManager = ((WorldGenRegionAccessor) context.level()).getStructureManager();
-        for (Holder<Structure> configuredStructureFeature : configuredStructureFeatureRegistry.getOrCreateTag(TagModule.BETTER_JUNGLE_TEMPLE)) {
-            if (structureManager.getStructureAt(context.origin(), configuredStructureFeature.value()).isValid()) {
-                cir.setReturnValue(false);
-                return;
+
+        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
+        for (Direction direction : Direction.Plane.HORIZONTAL) {
+            mutable.set(context.origin()).move(direction);
+            for (Holder<Structure> configuredStructureFeature : configuredStructureFeatureRegistry.getOrCreateTag(TagModule.BETTER_JUNGLE_TEMPLE)) {
+                if (structureManager.getStructureAt(mutable, configuredStructureFeature.value()).isValid()) {
+                    cir.setReturnValue(false);
+                    return;
+                }
             }
         }
     }
