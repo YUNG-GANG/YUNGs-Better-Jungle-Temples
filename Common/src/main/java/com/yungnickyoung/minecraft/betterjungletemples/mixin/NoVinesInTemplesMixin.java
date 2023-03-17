@@ -24,11 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  */
 @Mixin(VinesFeature.class)
 public class NoVinesInTemplesMixin {
-    @Inject(
-            method = "place",
-            at = @At(value = "HEAD"),
-            cancellable = true
-    )
+    @Inject(method = "place", at = @At(value = "HEAD"), cancellable = true)
     private void betterjungletemples_noVinesInTemples(FeaturePlaceContext<NoneFeatureConfiguration> context, CallbackInfoReturnable<Boolean> cir) {
         if (!(context.level() instanceof WorldGenRegion)) {
             return;
