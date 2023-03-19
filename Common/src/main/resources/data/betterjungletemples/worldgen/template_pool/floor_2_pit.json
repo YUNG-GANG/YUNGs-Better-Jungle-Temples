@@ -47,8 +47,17 @@
         "name": "alexsmobs_floor_2_pit_crocodiles",
         "max_count": 1,
         "condition": {
-          "type": "yungsapi:mod_loaded",
-          "modid": "alexsmobs"
+          "type": "yungsapi:all_of",
+          "conditions": [
+            {
+              "type": "yungsapi:mod_loaded",
+              "modid": "alexsmobs"
+            },
+            {
+              "type": "yungsapi:mod_loader",
+              "loaders": [ "forge" ]
+            }
+          ]
         },
         "processors": "betterjungletemples:main",
         "projection": "rigid",

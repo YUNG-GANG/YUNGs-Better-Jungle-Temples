@@ -381,8 +381,17 @@
         "name": "create_floor_2_sawblade_room",
         "max_count": 1,
         "condition": {
-          "type": "yungsapi:mod_loaded",
-          "modid": "create"
+          "type": "yungsapi:all_of",
+          "conditions": [
+            {
+              "type": "yungsapi:mod_loaded",
+              "modid": "create"
+            },
+            {
+              "type": "yungsapi:rotation",
+              "rotations": [ "none", "counterclockwise_90" ]
+            }
+          ]
         },
         "processors": "betterjungletemples:main",
         "projection": "rigid",
