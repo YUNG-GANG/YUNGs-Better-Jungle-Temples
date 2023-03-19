@@ -274,7 +274,7 @@
     },
     // Vine parkour rooms
     {
-      "weight": 1,
+      "weight": 15,
       "element": {
         "location": "betterjungletemples:floor_2/room/floor_2_vine_room_0",
         "name": "floor_2_vine_room",
@@ -361,7 +361,8 @@
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
-    },    {
+    },
+    {
       "weight": 12,
       "element": {
         "location": "betterjungletemples:floor_2/room/floor_2_water_room_4",
@@ -371,7 +372,22 @@
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
+    },
+    // Mod integrations
+    {
+      "weight": 60,
+      "element": {
+        "location": "betterjungletemples:mod_integration/create_floor_2_sawblade_room",
+        "name": "create_floor_2_sawblade_room",
+        "max_count": 1,
+        "condition": {
+          "type": "yungsapi:mod_loaded",
+          "modid": "create"
+        },
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
     }
-
   ]
 }

@@ -24,15 +24,31 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
+    // Mod integrations
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/pit/floor_2_pit_supplementaries",
-        "name": "floor_2_pit_supplementaries",
+        "location": "betterjungletemples:mod_integration/supplementaries_floor_2_pit_spikes",
+        "name": "supplementaries_floor_2_pit_spikes",
         "max_count": 1,
         "condition": {
           "type": "yungsapi:mod_loaded",
           "modid": "supplementaries"
+        },
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:mod_integration/alexsmobs_floor_2_pit_crocodiles",
+        "name": "alexsmobs_floor_2_pit_crocodiles",
+        "max_count": 1,
+        "condition": {
+          "type": "yungsapi:mod_loaded",
+          "modid": "alexsmobs"
         },
         "processors": "betterjungletemples:main",
         "projection": "rigid",
