@@ -397,6 +397,58 @@
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
+    },
+    {
+      "weight": 60,
+      "element": {
+        "location": "betterjungletemples:mod_integration/create_floor_2_crushing_corridor",
+        "name": "create_floor_2_crushing_corridor",
+        "max_count": 1,
+        "condition": {
+          "type": "yungsapi:all_of",
+          "conditions": [
+            {
+              "type": "yungsapi:mod_loaded",
+              "modid": "create"
+            },
+            {
+              "type": "yungsapi:rotation",
+              "rotations": [ "none", "counterclockwise_90" ]
+            }
+          ]
+        },
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 60,
+      "element": {
+        "location": "betterjungletemples:mod_integration/create_floor_2_supp_crushing_corridor",
+        "name": "create_floor_2_crushing_corridor",
+        "max_count": 1,
+        "condition": {
+          "type": "yungsapi:all_of",
+          "conditions": [
+            {
+              "type": "yungsapi:mod_loaded",
+              "modid": "create"
+            },
+            {
+              "type": "yungsapi:mod_loaded",
+              "modid": "supplementaries"
+            },
+            {
+              "type": "yungsapi:rotation",
+              "rotations": [ "none", "counterclockwise_90" ]
+            }
+          ]
+        },
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
     }
   ]
 }
