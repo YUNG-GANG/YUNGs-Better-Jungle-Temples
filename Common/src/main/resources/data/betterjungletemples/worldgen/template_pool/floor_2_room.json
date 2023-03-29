@@ -402,7 +402,7 @@
       "weight": 60,
       "element": {
         "location": "betterjungletemples:mod_integration/create_floor_2_crushing_corridor",
-        "name": "create_floor_2_crushing_corridor",
+        "name": "floor_2_corridor_room",
         "max_count": 1,
         "condition": {
           "type": "yungsapi:all_of",
@@ -426,7 +426,7 @@
       "weight": 60,
       "element": {
         "location": "betterjungletemples:mod_integration/create_floor_2_supp_crushing_corridor",
-        "name": "create_floor_2_crushing_corridor",
+        "name": "floor_2_corridor_room",
         "max_count": 1,
         "condition": {
           "type": "yungsapi:all_of",
