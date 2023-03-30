@@ -129,13 +129,13 @@
             "blockState": {
               "Name": "minecraft:mossy_cobblestone"
             },
-            "probability": 0.4
+            "probability": 0.25
           },
           {
             "blockState": {
               "Name": "minecraft:infested_cobblestone"
             },
-            "probability": 0.25
+            "probability": 0.5
           }
         ]
       }

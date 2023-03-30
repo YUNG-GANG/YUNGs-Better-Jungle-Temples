@@ -1,11 +1,11 @@
 {
-  "name": "betterjungletemples:treasure_room",
+  "name": "betterjungletemples:challenge_room_serpent_back",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:treasure_room/treasure_room_0",
+        "location": "betterjungletemples:challenge_room/serpent_back/challenge_room_serpent_back_0",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -14,7 +14,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:treasure_room/treasure_room_1",
+        "location": "betterjungletemples:challenge_room/serpent_back/challenge_room_serpent_back_1",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -23,7 +23,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:treasure_room/treasure_room_2",
+        "location": "betterjungletemples:challenge_room/serpent_back/challenge_room_serpent_back_2",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -32,7 +32,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:treasure_room/treasure_room_3",
+        "location": "betterjungletemples:challenge_room/serpent_back/challenge_room_serpent_back_3",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -41,16 +41,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:treasure_room/treasure_room_water_fill_0",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betterjungletemples:treasure_room/treasure_room_water_fill_1",
+        "location": "betterjungletemples:challenge_room/serpent_back/challenge_room_serpent_back_4",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"

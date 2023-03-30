@@ -19,6 +19,15 @@
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/challenge_room_serpent",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
     }
   ]
 }
