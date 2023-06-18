@@ -222,7 +222,7 @@
       "element": {
         "location": "betterjungletemples:floor_2/room/floor_2_vine_room_0",
         "name": "floor_2_vine_room",
-        "max_count": 15,
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"

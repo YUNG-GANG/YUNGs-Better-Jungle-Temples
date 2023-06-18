@@ -6,6 +6,8 @@
       "weight": 1,
       "element": {
         "location": "betterjungletemples:stairs/stairs_0",
+        "name": "stairs_0",
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -15,6 +17,8 @@
       "weight": 1,
       "element": {
         "location": "betterjungletemples:stairs/stairs_1",
+        "name": "stairs_1",
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -24,6 +28,8 @@
       "weight": 1,
       "element": {
         "location": "betterjungletemples:stairs/stairs_2",
+        "name": "stairs_2",
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -33,6 +39,19 @@
       "weight": 1,
       "element": {
         "location": "betterjungletemples:stairs/stairs_3",
+        "name": "stairs_3",
+        "max_count": 1,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:stairs/stairs_5",
+        "name": "stairs_5",
+        "max_count": 1,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
