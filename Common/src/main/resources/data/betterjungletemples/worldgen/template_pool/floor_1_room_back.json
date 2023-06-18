@@ -5,15 +5,6 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_1/room_back/floor_1_room_back_0",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
         "location": "betterjungletemples:floor_1/room_back/floor_1_room_back_1",
         "processors": "betterjungletemples:main",
         "projection": "rigid",

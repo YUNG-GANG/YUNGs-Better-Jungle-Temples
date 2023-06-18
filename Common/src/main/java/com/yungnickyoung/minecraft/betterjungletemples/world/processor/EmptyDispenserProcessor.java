@@ -36,7 +36,7 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                 RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos);
                 for (int slot = 0; slot < 9; slot++) {
                     // Get random arrow item to add
-                    ArrowData arrowData = ArrowData.getArrow(randomSource);
+                    ArrowData arrowData = ArrowData.getArrow(randomSource, 0.2f, 0.1f);
                     if (arrowData == ArrowData.EMPTY) {
                         continue;
                     }

@@ -33,12 +33,12 @@ public class ArrowData {
         return tag;
     }
 
-    public static ArrowData getArrow(RandomSource random) {
+    public static ArrowData getArrow(RandomSource random, float chance, float tippedChance) {
         float f = random.nextFloat();
-        if (f < 0.3f) {
+        if (f < chance) {
             return new ArrowData("minecraft:arrow");
         }
-        if (f < 0.4f) {
+        if (f < chance + tippedChance) {
             if (random.nextBoolean() && CompatModule.PICK_YOUR_POISON.enabled) {
                 return new ArrowData(CompatModule.PICK_YOUR_POISON.getDart(random));
             } else {
