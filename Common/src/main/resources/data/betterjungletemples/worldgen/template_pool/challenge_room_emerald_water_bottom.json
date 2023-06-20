@@ -1,0 +1,86 @@
+{
+  "name": "betterjungletemples:challenge_room_emerald_water_bottom",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_0_l",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_0_r",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_1_l",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_1_r",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_2_l",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_2_r",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_3_l",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/emerald_water_bottom/challenge_room_emerald_water_bottom_3_r",
+        "processors": "betterjungletemples:main_waterlog",
+        "ignore_bounds": true,
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    }
+  ]
+}

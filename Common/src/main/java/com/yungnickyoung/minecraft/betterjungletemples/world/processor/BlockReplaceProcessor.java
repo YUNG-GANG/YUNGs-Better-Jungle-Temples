@@ -8,6 +8,7 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.WorldGenRegion;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
@@ -37,7 +38,8 @@ public class BlockReplaceProcessor extends StructureProcessor {
                     BlockStateRandomizer.CODEC.fieldOf("output").forGetter(config -> config.output),
                     Codec.BOOL.optionalFieldOf("randomize_facing", false).forGetter(config -> config.randomizeFacing),
                     Codec.BOOL.optionalFieldOf("randomize_half", false).forGetter(config -> config.randomizeHalf),
-                    Codec.BOOL.optionalFieldOf("copy_input_properties", false).forGetter(config -> config.copyInputProperties))
+                    Codec.BOOL.optionalFieldOf("copy_input_properties", false).forGetter(config -> config.copyInputProperties),
+                    Codec.BOOL.optionalFieldOf("preserve_waterlog", false).forGetter(config -> config.preserveWaterlog))
             .apply(instance, instance.stable(BlockReplaceProcessor::new)));
 
     public final BlockState targetBlock;
@@ -45,17 +47,20 @@ public class BlockReplaceProcessor extends StructureProcessor {
     public final boolean randomizeFacing;
     public final boolean randomizeHalf;
     public final boolean copyInputProperties;
+    public final boolean preserveWaterlog;
 
     private BlockReplaceProcessor(BlockState targetBlock,
                                   BlockStateRandomizer output,
                                   boolean randomizeFacing,
                                   boolean randomizeHalf,
-                                  boolean copyInputProperties) {
+                                  boolean copyInputProperties,
+                                  boolean preserveWaterlog) {
         this.targetBlock = targetBlock;
         this.output = output;
         this.randomizeFacing = randomizeFacing;
         this.randomizeHalf = randomizeHalf;
         this.copyInputProperties = copyInputProperties;
+        this.preserveWaterlog = preserveWaterlog;
     }
 
     @Override
@@ -125,6 +130,11 @@ public class BlockReplaceProcessor extends StructureProcessor {
             if (levelReader instanceof WorldGenRegion worldGenRegion && (outputState.is(Blocks.WATER) || outputState.is(Blocks.LAVA))) {
                 FlowingFluid fluid = outputState.is(Blocks.WATER) ? Fluids.WATER : Fluids.LAVA;
                 worldGenRegion.scheduleTick(blockInfoGlobal.pos, fluid, 0);
+            }
+
+            if (this.preserveWaterlog && outputState.hasProperty(BlockStateProperties.WATERLOGGED)
+                    && blockInfoGlobal.state.hasProperty(BlockStateProperties.WATERLOGGED) && blockInfoGlobal.state.getValue(BlockStateProperties.WATERLOGGED)) {
+                outputState = outputState.setValue(BlockStateProperties.WATERLOGGED, true);
             }
 
             blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, outputState, blockInfoGlobal.nbt);
