@@ -41,6 +41,19 @@
       }
     },
     {
+      "processor_type": "betterjungletemples:block_replace_processor",
+      "target_block": {
+        "Name": "minecraft:pink_concrete"
+      },
+      "output": {
+        "defaultBlockState": {
+          "Name": "minecraft:infested_cobblestone"
+        },
+        "entries": [
+        ]
+      }
+    },
+    {
       "processor_type": "betterjungletemples:pillar_processor",
       "target_block": {
         "Name": "minecraft:orange_stained_glass"
