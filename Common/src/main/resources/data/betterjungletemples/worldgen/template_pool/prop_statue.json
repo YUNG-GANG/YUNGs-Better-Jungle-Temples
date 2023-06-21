@@ -1,11 +1,42 @@
 {
-  "name": "betterjungletemples:floor_2_hallway",
+  "name": "betterjungletemples:prop_statue",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1,
+      "weight": 1000,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_0",
+        "location": "betterjungletemples:props/prop_statue_0",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1000,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_1",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1000,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_2",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "betterjungletemples:props/prop_emerald_block",
+        "ignore_bounds": true,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -14,43 +45,8 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_1",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_2",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_3",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_4",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_6",
+        "location": "betterjungletemples:props/prop_statue_sus",
+        "ignore_bounds": true,
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"

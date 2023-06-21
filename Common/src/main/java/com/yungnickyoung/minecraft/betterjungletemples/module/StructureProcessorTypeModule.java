@@ -1,6 +1,7 @@
 package com.yungnickyoung.minecraft.betterjungletemples.module;
 
 import com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesCommon;
+import com.yungnickyoung.minecraft.betterjungletemples.world.processor.BlastFurnaceProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.BlockReplaceProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.CaveVineDecorationProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.EmptyDispenserProcessor;
@@ -33,4 +34,7 @@ public class StructureProcessorTypeModule {
 
     @AutoRegister("torch_processor")
     public static StructureProcessorType<TorchProcessor> TORCH_PROCESSOR = () -> TorchProcessor.CODEC;
+
+    @AutoRegister("blast_furnace_processor")
+    public static StructureProcessorType<BlastFurnaceProcessor> BLAST_FURNACE_PROCESSOR = () -> BlastFurnaceProcessor.CODEC;
 }

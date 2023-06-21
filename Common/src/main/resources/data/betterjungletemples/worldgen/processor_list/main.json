@@ -16,6 +16,9 @@
       "processor_type": "betterjungletemples:torch_processor"
     },
     {
+      "processor_type": "betterjungletemples:blast_furnace_processor"
+    },
+    {
       "processor_type": "betterjungletemples:block_replace_processor",
       "target_block": {
         "Name": "minecraft:blue_concrete"

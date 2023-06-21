@@ -1,11 +1,11 @@
 {
-  "name": "betterjungletemples:floor_2_hallway",
+  "name": "betterjungletemples:prop_campsite",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_0",
+        "location": "betterjungletemples:props/prop_campsite_0",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -14,7 +14,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_1",
+        "location": "betterjungletemples:props/prop_campsite_1",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -23,7 +23,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_2",
+        "location": "betterjungletemples:props/prop_campsite_2",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -32,7 +32,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_3",
+        "location": "betterjungletemples:props/prop_campsite_3",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
@@ -41,16 +41,7 @@
     {
       "weight": 1,
       "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_4",
-        "processors": "betterjungletemples:main",
-        "projection": "rigid",
-        "element_type": "yungsapi:yung_single_element"
-      }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_6",
+        "location": "betterjungletemples:props/prop_campsite_4",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
