@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:is_jungle",
-    {
-      "id": "#c:jungle",
-      "required": false
-    }
+    "#minecraft:has_structure/jungle_temple"
   ]
 }

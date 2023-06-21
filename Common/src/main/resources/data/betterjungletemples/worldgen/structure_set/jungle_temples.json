@@ -6,13 +6,13 @@
     }
   ],
   "placement": {
-    "type": "yungsapi:enhanced_random_spread",
+    "type": "betterjungletemples:jungle_temple",
     "salt": 996971851,
-    "spacing": 32,
-    "separation": 12,
+    "spacing": 24,
+    "separation": 8,
     "enhanced_exclusion_zone": {
       "other_set": "#betterjungletemples:jungle_temple_avoid",
-      "chunk_count": 10
+      "chunk_count": 4
     }
   }
 }
