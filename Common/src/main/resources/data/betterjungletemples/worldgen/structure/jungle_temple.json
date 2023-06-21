@@ -21,5 +21,20 @@
   "use_expansion_hack": false,
   "max_distance_from_center": 128,
   "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": [
+      ]
+    },
+    "creature": {
+      "bounding_box": "piece",
+      "spawns": [
+      ]
+    },
+    "ambient": {
+      "bounding_box": "piece",
+      "spawns": [
+      ]
+    }
   }
 }
