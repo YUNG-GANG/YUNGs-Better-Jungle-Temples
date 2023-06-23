@@ -354,10 +354,6 @@
             {
               "type": "yungsapi:mod_loaded",
               "modid": "create"
-            },
-            {
-              "type": "yungsapi:rotation",
-              "rotations": [ "none", "counterclockwise_90" ]
             }
           ]
         },
@@ -382,10 +378,6 @@
             {
               "type": "yungsapi:mod_loaded",
               "modid": "supplementaries"
-            },
-            {
-              "type": "yungsapi:rotation",
-              "rotations": [ "none", "counterclockwise_90" ]
             }
           ]
         },
