@@ -28,6 +28,6 @@ public class ConfigModuleForge {
 
     private static void bakeConfig() {
         BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples = BJTConfigForge.general.disableVanillaJungleTemples.get();
-        BetterJungleTemplesCommon.CONFIG.compat.pickYourPoisonEnabled = BJTConfigForge.compat.pickYourPoisonEnabled.get();
+        BetterJungleTemplesCommon.CONFIG.compat.pickYourPoisonEnabled = false;
     }
 }
