@@ -50,6 +50,15 @@
     {
       "weight": 1,
       "element": {
+        "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_5",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
         "location": "betterjungletemples:floor_2/hallway/floor_2_hallway_6",
         "processors": "betterjungletemples:main",
         "projection": "rigid",

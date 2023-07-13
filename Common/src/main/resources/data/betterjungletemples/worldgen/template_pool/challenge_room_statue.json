@@ -133,6 +133,17 @@
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"
       }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:challenge_room/statue/challenge_statue_cherryblossom",
+        "name": "challenge_room_statue_cherryblossom",
+        "max_count": 1,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
     }
   ]
 }

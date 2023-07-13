@@ -21,9 +21,18 @@
       }
     },
     {
-      "weight": 2,
+      "weight": 1,
       "element": {
         "location": "betterjungletemples:treasure_room/treasure_room_2",
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "betterjungletemples:treasure_room/treasure_room_2_sakura",
         "processors": "betterjungletemples:main",
         "projection": "rigid",
         "element_type": "yungsapi:yung_single_element"

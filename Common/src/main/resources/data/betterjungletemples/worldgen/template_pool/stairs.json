@@ -49,6 +49,17 @@
     {
       "weight": 1,
       "element": {
+        "location": "betterjungletemples:stairs/stairs_4",
+        "name": "stairs_4",
+        "max_count": 1,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
         "location": "betterjungletemples:stairs/stairs_5",
         "name": "stairs_5",
         "max_count": 1,
