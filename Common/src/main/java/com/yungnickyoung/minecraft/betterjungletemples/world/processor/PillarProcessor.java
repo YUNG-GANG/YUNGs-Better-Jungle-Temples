@@ -53,13 +53,13 @@ public class PillarProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(this.targetBlock.getBlock())) {
-            if (levelReader instanceof WorldGenRegion worldGenRegion && !worldGenRegion.getCenter().equals(new ChunkPos(blockInfoGlobal.pos))) {
+        if (blockInfoGlobal.state().is(this.targetBlock.getBlock())) {
+            if (levelReader instanceof WorldGenRegion worldGenRegion && !worldGenRegion.getCenter().equals(new ChunkPos(blockInfoGlobal.pos()))) {
                 return blockInfoGlobal;
             }
-            RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos);
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, targetBlockOutput.get(random), blockInfoGlobal.nbt);
-            BlockPos.MutableBlockPos mutable = blockInfoGlobal.pos.mutable().move(Direction.DOWN);
+            RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos());
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), targetBlockOutput.get(random), blockInfoGlobal.nbt());
+            BlockPos.MutableBlockPos mutable = blockInfoGlobal.pos().mutable().move(Direction.DOWN);
             BlockState currBlockState = levelReader.getBlockState(mutable);
 
             while (mutable.getY() > levelReader.getMinBuildHeight()

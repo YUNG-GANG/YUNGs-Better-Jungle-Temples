@@ -39,8 +39,8 @@ public class CaveVineDecorationProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.GREEN_STAINED_GLASS)) {
-            RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos);
+        if (blockInfoGlobal.state().is(Blocks.GREEN_STAINED_GLASS)) {
+            RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
             BlockState blockState = randomizer.get(randomSource);
 
             if (blockState.is(Blocks.CAVE_VINES)) {
@@ -51,7 +51,7 @@ public class CaveVineDecorationProcessor extends StructureProcessor {
                         .setValue(CaveVinesBlock.BERRIES, berries);
             }
 
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, null);
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, null);
         }
         return blockInfoGlobal;
     }

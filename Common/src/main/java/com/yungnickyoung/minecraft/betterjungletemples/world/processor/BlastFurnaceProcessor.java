@@ -35,11 +35,11 @@ public class BlastFurnaceProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.BLAST_FURNACE)) {
-            RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos);
+        if (blockInfoGlobal.state().is(Blocks.BLAST_FURNACE)) {
+            RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
             BlockState blockState = SELECTOR.get(randomSource);
-            blockState = blockState.setValue(DirectionalBlock.FACING, blockInfoGlobal.state.getValue(BlastFurnaceBlock.FACING));
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, null);
+            blockState = blockState.setValue(DirectionalBlock.FACING, blockInfoGlobal.state().getValue(BlastFurnaceBlock.FACING));
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, null);
         }
         return blockInfoGlobal;
     }

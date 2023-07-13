@@ -30,10 +30,10 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.DISPENSER)) {
-            ListTag items = blockInfoGlobal.nbt.getList("Items", ListTag.TAG_COMPOUND);
+        if (blockInfoGlobal.state().is(Blocks.DISPENSER)) {
+            ListTag items = blockInfoGlobal.nbt().getList("Items", ListTag.TAG_COMPOUND);
             if (items.size() == 0) {
-                RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos);
+                RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
                 for (int slot = 0; slot < 9; slot++) {
                     // Get random arrow item to add
                     ArrowData arrowData = ArrowData.getArrow(randomSource, 0.2f, 0.1f);
@@ -57,7 +57,7 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                     // Add item
                     items.add(slotTag);
                 }
-                blockInfoGlobal.nbt.put("Items", items);
+                blockInfoGlobal.nbt().put("Items", items);
             }
         }
         return blockInfoGlobal;

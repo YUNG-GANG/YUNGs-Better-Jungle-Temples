@@ -32,11 +32,11 @@ public class FireballDispenserProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state.is(Blocks.ORANGE_CONCRETE)) {
+        if (blockInfoGlobal.state().is(Blocks.ORANGE_CONCRETE)) {
             BlockState blockState = Blocks.DISPENSER.defaultBlockState().setValue(DispenserBlock.FACING, Direction.UP);
             CompoundTag newNbt = new CompoundTag();
             ListTag items = new ListTag();
-            RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos);
+            RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
 
             for (int slot = 0; slot < 9; slot++) {
                 if (randomSource.nextFloat() < 0.1f || slot == 4) {
@@ -48,7 +48,7 @@ public class FireballDispenserProcessor extends StructureProcessor {
                 }
             }
             newNbt.put("Items", items);
-            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, newNbt);
+            blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos(), blockState, newNbt);
         }
         return blockInfoGlobal;
     }
