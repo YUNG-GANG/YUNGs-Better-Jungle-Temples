@@ -9,6 +9,5 @@ public class ConfigModule {
     }
 
     public static class Compat {
-        public boolean pickYourPoisonEnabled = true;
     }
 }

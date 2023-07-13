@@ -3,6 +3,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.placement;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.yungnickyoung.minecraft.betterjungletemples.mixin.accessor.ChunkGeneratorStructureStateAccessor;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructurePlacementTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.exclusion.EnhancedExclusionZone;
 import net.minecraft.core.BlockPos;
@@ -10,7 +11,8 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.biome.BiomeSource;
+import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
 import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
@@ -37,7 +39,7 @@ public class BetterJungleTemplePlacement extends RandomSpreadStructurePlacement 
 
     private static Function<BetterJungleTemplePlacement, DataResult<BetterJungleTemplePlacement>> verifySpacing() {
         return placement -> placement.spacing() <= placement.separation()
-                ? DataResult.error("EnhancedRandomSpread's spacing has to be larger than separation")
+                ? DataResult.error(() -> "EnhancedRandomSpread's spacing has to be larger than separation")
                 : DataResult.success(placement);
     }
 
@@ -62,29 +64,31 @@ public class BetterJungleTemplePlacement extends RandomSpreadStructurePlacement 
     }
 
     @Override
-    protected boolean isPlacementChunk(ChunkGenerator chunkGenerator, RandomState randomState, long seed, int chunkX, int chunkZ) {
+    protected boolean isPlacementChunk(ChunkGeneratorStructureState state, int chunkX, int chunkZ) {
+        BiomeSource biomeSource = ((ChunkGeneratorStructureStateAccessor) state).getBiomeSource();
+        RandomState randomState = state.randomState();
+        long seed = state.getLevelSeed();
         ChunkPos chunkPos = this.getPotentialStructureChunk(seed, chunkX, chunkZ);
         if (chunkPos.x == chunkX && chunkPos.z == chunkZ) {
             BlockPos structurePos = chunkPos.getMiddleBlockPosition(120);
-            boolean isOceanOrRiverNear = chunkGenerator
-                    .getBiomeSource()
-                    .findBiomeHorizontal(structurePos.getX(), structurePos.getY(), structurePos.getZ(),
-                            48, 2,
-                            biomeHolder -> biomeHolder.is(BiomeTags.IS_RIVER) || biomeHolder.is(BiomeTags.IS_OCEAN),
-                            randomState.oreRandom().at(structurePos), true,
-                            randomState.sampler()
-                    ) != null;
+            boolean isOceanOrRiverNear = biomeSource.findBiomeHorizontal(
+                    structurePos.getX(), structurePos.getY(), structurePos.getZ(),
+                    48, 2,
+                    biomeHolder -> biomeHolder.is(BiomeTags.IS_RIVER) || biomeHolder.is(BiomeTags.IS_OCEAN),
+                    randomState.oreRandom().at(structurePos), true,
+                    randomState.sampler()
+            ) != null;
             return !isOceanOrRiverNear;
         }
         return false;
     }
 
     @Override
-    public boolean isStructureChunk(ChunkGenerator chunkGenerator, RandomState randomState, long seed, int x, int z) {
-        if (!super.isStructureChunk(chunkGenerator, randomState, seed, x, z)) {
+    public boolean isStructureChunk(ChunkGeneratorStructureState state, int x, int z) {
+        if (!super.isStructureChunk(state, x, z)) {
             return false;
         }
         return this.enhancedExclusionZone.isEmpty()
-                || !this.enhancedExclusionZone.get().isPlacementForbidden(chunkGenerator, randomState, seed, x, z);
+                || !this.enhancedExclusionZone.get().isPlacementForbidden(state, x, z);
     }
 }

@@ -2,7 +2,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
 import com.mojang.serialization.Codec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
-import com.yungnickyoung.minecraft.yungsapi.world.BlockStateRandomizer;
+import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;

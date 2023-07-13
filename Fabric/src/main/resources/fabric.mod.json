@@ -30,11 +30,11 @@
     "betterjungletemples_fabric.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14",
-    "fabric": ">=0.60.0",
-    "minecraft": ">=1.19.2",
-    "cloth-config2": ">=8.0.75",
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric": ">=${fabric_version}",
+    "minecraft": ">=${mc_version}",
+    "cloth-config2": ">=${clothconfig_version_fabric}",
     "java": ">=17",
-    "yungsapi": ">=${minecraft_version}-Fabric-${yungsapi_version}"
+    "yungsapi": ">=${mc_version}-Fabric-${yungsapi_version}"
   }
 }

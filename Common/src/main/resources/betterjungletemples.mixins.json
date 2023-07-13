@@ -8,6 +8,7 @@
     "LocateVanillaJungleTempleCommandMixin",
     "NoVinesInTemplesMixin",
     "StructureTemplateMixin",
+    "accessor.ChunkGeneratorStructureStateAccessor",
     "accessor.StructureManagerAccessor",
     "accessor.StructureProcessorAccessor",
     "accessor.WorldGenRegionAccessor"

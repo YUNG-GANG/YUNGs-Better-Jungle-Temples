@@ -1,6 +1,5 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.util;
 
-import com.yungnickyoung.minecraft.betterjungletemples.module.CompatModule;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
@@ -39,11 +38,11 @@ public class ArrowData {
             return new ArrowData("minecraft:arrow");
         }
         if (f < chance + tippedChance) {
-            if (random.nextBoolean() && CompatModule.PICK_YOUR_POISON.enabled) {
-                return new ArrowData(CompatModule.PICK_YOUR_POISON.getDart(random));
-            } else {
-                return new ArrowData("minecraft:tipped_arrow", Util.make(new CompoundTag(), tag -> tag.putString("Potion", "minecraft:poison")));
-            }
+//            if (random.nextBoolean() && CompatModule.PICK_YOUR_POISON.enabled) {
+//                return new ArrowData(CompatModule.PICK_YOUR_POISON.getDart(random));
+//            } else {
+            return new ArrowData("minecraft:tipped_arrow", Util.make(new CompoundTag(), tag -> tag.putString("Potion", "minecraft:poison")));
+//            }
         }
         return ArrowData.EMPTY;
     }

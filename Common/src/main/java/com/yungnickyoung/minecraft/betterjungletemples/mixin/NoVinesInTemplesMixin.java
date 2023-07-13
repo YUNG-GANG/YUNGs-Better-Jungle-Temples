@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -30,7 +31,7 @@ public class NoVinesInTemplesMixin {
             return;
         }
 
-        Registry<Structure> configuredStructureFeatureRegistry = context.level().registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY);
+        Registry<Structure> configuredStructureFeatureRegistry = context.level().registryAccess().registryOrThrow(Registries.STRUCTURE);
         StructureManager structureManager = ((WorldGenRegionAccessor) context.level()).getStructureManager();
 
         BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();

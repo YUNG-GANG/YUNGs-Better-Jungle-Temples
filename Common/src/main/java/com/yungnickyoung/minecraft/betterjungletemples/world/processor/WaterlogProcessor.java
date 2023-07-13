@@ -2,7 +2,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
 import com.mojang.serialization.Codec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
-import com.yungnickyoung.minecraft.yungsapi.world.processor.ISafeWorldModifier;
+import com.yungnickyoung.minecraft.yungsapi.world.structure.processor.ISafeWorldModifier;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;

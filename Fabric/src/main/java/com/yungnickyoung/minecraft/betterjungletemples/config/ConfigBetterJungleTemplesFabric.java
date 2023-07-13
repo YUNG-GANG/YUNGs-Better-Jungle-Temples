@@ -7,10 +7,4 @@ public class ConfigBetterJungleTemplesFabric {
     @ConfigEntry.Gui.CollapsibleObject
     @ConfigEntry.Gui.Tooltip
     public ConfigGeneralFabric general = new ConfigGeneralFabric();
-
-    @ConfigEntry.Category("Mod Compatibility")
-    @ConfigEntry.Gui.CollapsibleObject
-    @ConfigEntry.Gui.Tooltip
-    public ConfigCompatFabric compat = new ConfigCompatFabric();
-
 }

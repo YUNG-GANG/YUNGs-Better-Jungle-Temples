@@ -2,7 +2,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
 import com.mojang.serialization.Codec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
-import com.yungnickyoung.minecraft.yungsapi.world.BlockStateRandomizer;
+import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -38,9 +38,7 @@ public class BlastFurnaceProcessor extends StructureProcessor {
         if (blockInfoGlobal.state.is(Blocks.BLAST_FURNACE)) {
             RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos);
             BlockState blockState = SELECTOR.get(randomSource);
-            blockState = blockState.setValue(DirectionalBlock.FACING, blockState.is(Blocks.OBSERVER)
-                    ? blockInfoGlobal.state.getValue(BlastFurnaceBlock.FACING)
-                    : blockInfoGlobal.state.getValue(BlastFurnaceBlock.FACING));
+            blockState = blockState.setValue(DirectionalBlock.FACING, blockInfoGlobal.state.getValue(BlastFurnaceBlock.FACING));
             blockInfoGlobal = new StructureTemplate.StructureBlockInfo(blockInfoGlobal.pos, blockState, null);
         }
         return blockInfoGlobal;

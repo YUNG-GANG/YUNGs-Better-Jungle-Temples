@@ -4,7 +4,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesCommon;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.arguments.ResourceOrTagLocationArgument;
+import net.minecraft.commands.arguments.ResourceOrTagKeyArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -27,10 +27,11 @@ public class LocateVanillaJungleTempleCommandMixin {
 
     @Inject(method = "locateStructure", at = @At(value = "HEAD"))
     private static void betterjungletemples_overrideLocateVanillaJungleTemple(CommandSourceStack cmdSource,
-                                                                       ResourceOrTagLocationArgument.Result<Structure> result,
-                                                                       CallbackInfoReturnable<Integer> ci) throws CommandSyntaxException {
+                                                                              ResourceOrTagKeyArgument.Result<Structure> result,
+                                                                              CallbackInfoReturnable<Integer> ci) throws CommandSyntaxException {
         Optional<ResourceKey<Structure>> optional = result.unwrap().left();
-        if (BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples && optional.isPresent()
+        if (BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples
+                && optional.isPresent()
                 && optional.get().location().equals(new ResourceLocation("jungle_pyramid"))) {
             throw OLD_JUNGLE_TEMPLE_EXCEPTION.create();
         }
