@@ -151,7 +151,7 @@
             "blockState": {
               "Name": "minecraft:infested_cobblestone"
             },
-            "probability": 0.5
+            "probability": 0.05
           }
         ]
       }
@@ -269,7 +269,7 @@
             "blockState": {
               "Name": "minecraft:infested_chiseled_stone_bricks"
             },
-            "probability": 0.75
+            "probability": 0.25
           }
         ]
       }
