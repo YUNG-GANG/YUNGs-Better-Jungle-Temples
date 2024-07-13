@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
@@ -23,7 +23,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class FireballDispenserProcessor extends StructureProcessor {
     public static final FireballDispenserProcessor INSTANCE = new FireballDispenserProcessor();
-    public static final Codec<FireballDispenserProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<FireballDispenserProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,

@@ -9,7 +9,6 @@ import com.yungnickyoung.minecraft.betterjungletemples.world.processor.EmptyDisp
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.FireballDispenserProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.PillarProcessor;
 import com.yungnickyoung.minecraft.betterjungletemples.world.processor.TorchProcessor;
-import com.yungnickyoung.minecraft.betterjungletemples.world.processor.WaterlogProcessor;
 import com.yungnickyoung.minecraft.yungsapi.api.autoregister.AutoRegister;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 
@@ -20,9 +19,6 @@ public class StructureProcessorTypeModule {
 
     @AutoRegister("block_replace_processor")
     public static StructureProcessorType<BlockReplaceProcessor> BLOCK_REPLACE_PROCESSOR = () -> BlockReplaceProcessor.CODEC;
-
-    @AutoRegister("waterlog_processor")
-    public static StructureProcessorType<WaterlogProcessor> WATERLOG_PROCESSOR = () -> WaterlogProcessor.CODEC;
 
     @AutoRegister("empty_dispenser_processor")
     public static StructureProcessorType<EmptyDispenserProcessor> EMPTY_DISPENSER_PROCESSOR = () -> EmptyDispenserProcessor.CODEC;

@@ -7,29 +7,33 @@ import net.minecraft.util.RandomSource;
 public class ArrowData {
     public static final ArrowData EMPTY = new ArrowData("minecraft:air");
 
-    private String id;
-    private CompoundTag tag;
+    private final String id;
+    private final CompoundTag componentsTag;
 
-    public ArrowData(String id, CompoundTag tag) {
+    public ArrowData(String id, String potionId) {
         this.id = id;
-        this.tag = tag;
+        this.componentsTag = Util.make(new CompoundTag(), tag -> {
+            tag.put("minecraft:potion_contents", Util.make(new CompoundTag(), potionTag -> {
+                potionTag.putString("potion", potionId);
+            }));
+        });
     }
 
     public ArrowData(String id) {
         this.id = id;
-        this.tag = null;
+        this.componentsTag = null;
     }
 
     public String getId() {
         return id;
     }
 
-    public boolean hasTag() {
-        return tag != null;
+    public boolean isTipped() {
+        return componentsTag != null;
     }
 
-    public CompoundTag getTag() {
-        return tag;
+    public CompoundTag getComponentsTag() {
+        return componentsTag;
     }
 
     public static ArrowData getArrow(RandomSource random, float chance, float tippedChance) {
@@ -41,7 +45,7 @@ public class ArrowData {
 //            if (random.nextBoolean() && CompatModule.PICK_YOUR_POISON.enabled) {
 //                return new ArrowData(CompatModule.PICK_YOUR_POISON.getDart(random));
 //            } else {
-            return new ArrowData("minecraft:tipped_arrow", Util.make(new CompoundTag(), tag -> tag.putString("Potion", "minecraft:poison")));
+            return new ArrowData("minecraft:tipped_arrow", "minecraft:poison");
 //            }
         }
         return ArrowData.EMPTY;

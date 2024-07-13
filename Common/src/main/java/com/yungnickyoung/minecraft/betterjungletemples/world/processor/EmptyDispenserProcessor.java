@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.betterjungletemples.world.util.ArrowData;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -21,7 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class EmptyDispenserProcessor extends StructureProcessor {
     public static final EmptyDispenserProcessor INSTANCE = new EmptyDispenserProcessor();
-    public static final Codec<EmptyDispenserProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<EmptyDispenserProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
@@ -32,7 +32,7 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                                                              StructurePlaceSettings structurePlacementData) {
         if (blockInfoGlobal.state().is(Blocks.DISPENSER)) {
             ListTag items = blockInfoGlobal.nbt().getList("Items", ListTag.TAG_COMPOUND);
-            if (items.size() == 0) {
+            if (items.isEmpty()) {
                 RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
                 for (int slot = 0; slot < 9; slot++) {
                     // Get random arrow item to add
@@ -41,17 +41,13 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                         continue;
                     }
 
-                    String arrowId = arrowData.getId();
-                    CompoundTag arrowTag = arrowData.getTag();
-                    int count = 1;
-
                     // Populate NBT for this slot in dispenser
                     CompoundTag slotTag = new CompoundTag();
                     slotTag.putByte("Slot", (byte) slot);
-                    slotTag.putString("id", arrowId);
-                    slotTag.putByte("Count", (byte) count);
-                    if (arrowTag != null) {
-                        slotTag.put("tag", arrowTag);
+                    slotTag.putString("id", arrowData.getId());
+                    slotTag.putByte("Count", (byte) 1);
+                    if (arrowData.isTipped()) {
+                        slotTag.put("components", arrowData.getComponentsTag());
                     }
 
                     // Add item

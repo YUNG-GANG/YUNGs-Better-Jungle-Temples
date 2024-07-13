@@ -7,11 +7,7 @@
     "DisableVanillaJungleTempleMixin",
     "LocateVanillaJungleTempleCommandMixin",
     "NoVinesInTemplesMixin",
-    "StructureTemplateMixin",
-    "accessor.ChunkGeneratorStructureStateAccessor",
-    "accessor.StructureManagerAccessor",
-    "accessor.StructureProcessorAccessor",
-    "accessor.WorldGenRegionAccessor"
+    "accessor.ChunkGeneratorStructureStateAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

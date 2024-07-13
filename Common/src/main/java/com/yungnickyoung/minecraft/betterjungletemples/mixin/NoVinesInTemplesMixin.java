@@ -1,6 +1,5 @@
 package com.yungnickyoung.minecraft.betterjungletemples.mixin;
 
-import com.yungnickyoung.minecraft.betterjungletemples.mixin.accessor.WorldGenRegionAccessor;
 import com.yungnickyoung.minecraft.betterjungletemples.module.TagModule;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,7 +31,7 @@ public class NoVinesInTemplesMixin {
         }
 
         Registry<Structure> configuredStructureFeatureRegistry = context.level().registryAccess().registryOrThrow(Registries.STRUCTURE);
-        StructureManager structureManager = ((WorldGenRegionAccessor) context.level()).getStructureManager();
+        StructureManager structureManager = context.level().getLevel().structureManager();
 
         BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
         for (Direction direction : Direction.Plane.HORIZONTAL) {

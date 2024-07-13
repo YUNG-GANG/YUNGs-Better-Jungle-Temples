@@ -2,6 +2,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.placement;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.yungnickyoung.minecraft.betterjungletemples.mixin.accessor.ChunkGeneratorStructureStateAccessor;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructurePlacementTypeModule;
@@ -19,26 +20,24 @@ import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
 import net.minecraft.world.level.levelgen.structure.placement.StructurePlacementType;
 
 import java.util.Optional;
-import java.util.function.Function;
 
 public class BetterJungleTemplePlacement extends RandomSpreadStructurePlacement {
-    public static final Codec<BetterJungleTemplePlacement> CODEC = RecordCodecBuilder.<BetterJungleTemplePlacement>mapCodec(builder -> builder
-            .group(
-                    Vec3i.offsetCodec(16).optionalFieldOf("locate_offset", Vec3i.ZERO).forGetter(placement -> placement.locateOffset()),
-                    FrequencyReductionMethod.CODEC.optionalFieldOf("frequency_reduction_method", FrequencyReductionMethod.DEFAULT).forGetter(placement -> placement.frequencyReductionMethod()),
-                    Codec.floatRange(0.0F, 1.0F).optionalFieldOf("frequency", 1.0F).forGetter(placement -> placement.frequency()),
-                    ExtraCodecs.NON_NEGATIVE_INT.fieldOf("salt").forGetter(placement -> placement.salt()),
-                    ExclusionZone.CODEC.optionalFieldOf("exclusion_zone").forGetter(placement -> placement.exclusionZone()),
-                    EnhancedExclusionZone.CODEC.optionalFieldOf("enhanced_exclusion_zone").forGetter(placement -> placement.enhancedExclusionZone),
-                    ExtraCodecs.NON_NEGATIVE_INT.fieldOf("spacing").forGetter(placement -> placement.spacing()),
-                    ExtraCodecs.NON_NEGATIVE_INT.fieldOf("separation").forGetter(placement -> placement.separation()),
-                    RandomSpreadType.CODEC.optionalFieldOf("spread_type", RandomSpreadType.LINEAR).forGetter(placement -> placement.spreadType()))
-            .apply(builder, builder.stable(BetterJungleTemplePlacement::new)))
-            .flatXmap(verifySpacing(), DataResult::success)
-            .codec();
+    public static final MapCodec<BetterJungleTemplePlacement> CODEC = RecordCodecBuilder.<BetterJungleTemplePlacement>mapCodec(builder -> builder
+                    .group(
+                            Vec3i.offsetCodec(16).optionalFieldOf("locate_offset", Vec3i.ZERO).forGetter(placement -> placement.locateOffset()),
+                            FrequencyReductionMethod.CODEC.optionalFieldOf("frequency_reduction_method", FrequencyReductionMethod.DEFAULT).forGetter(placement -> placement.frequencyReductionMethod()),
+                            Codec.floatRange(0.0F, 1.0F).optionalFieldOf("frequency", 1.0F).forGetter(placement -> placement.frequency()),
+                            ExtraCodecs.NON_NEGATIVE_INT.fieldOf("salt").forGetter(placement -> placement.salt()),
+                            ExclusionZone.CODEC.optionalFieldOf("exclusion_zone").forGetter(placement -> placement.exclusionZone()),
+                            EnhancedExclusionZone.CODEC.optionalFieldOf("enhanced_exclusion_zone").forGetter(placement -> placement.enhancedExclusionZone),
+                            ExtraCodecs.NON_NEGATIVE_INT.fieldOf("spacing").forGetter(RandomSpreadStructurePlacement::spacing),
+                            ExtraCodecs.NON_NEGATIVE_INT.fieldOf("separation").forGetter(RandomSpreadStructurePlacement::separation),
+                            RandomSpreadType.CODEC.optionalFieldOf("spread_type", RandomSpreadType.LINEAR).forGetter(RandomSpreadStructurePlacement::spreadType))
+                    .apply(builder, builder.stable(BetterJungleTemplePlacement::new)))
+            .validate(BetterJungleTemplePlacement::validateSpacing);
 
-    private static Function<BetterJungleTemplePlacement, DataResult<BetterJungleTemplePlacement>> verifySpacing() {
-        return placement -> placement.spacing() <= placement.separation()
+    private static DataResult<BetterJungleTemplePlacement> validateSpacing(BetterJungleTemplePlacement placement) {
+        return placement.spacing() <= placement.separation()
                 ? DataResult.error(() -> "EnhancedRandomSpread's spacing has to be larger than separation")
                 : DataResult.success(placement);
     }

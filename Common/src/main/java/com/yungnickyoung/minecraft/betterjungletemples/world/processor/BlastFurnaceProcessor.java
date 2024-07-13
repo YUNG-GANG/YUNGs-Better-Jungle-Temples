@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -22,7 +22,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class BlastFurnaceProcessor extends StructureProcessor {
     public static final BlastFurnaceProcessor INSTANCE = new BlastFurnaceProcessor();
-    public static final Codec<BlastFurnaceProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<BlastFurnaceProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     private static final BlockStateRandomizer SELECTOR = new BlockStateRandomizer(Blocks.DISPENSER.defaultBlockState())
             .addBlock(Blocks.DROPPER.defaultBlockState(), 0.4f)

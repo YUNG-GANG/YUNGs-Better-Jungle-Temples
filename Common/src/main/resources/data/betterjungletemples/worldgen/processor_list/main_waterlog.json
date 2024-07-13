@@ -1,9 +1,6 @@
 {
   "processors": [
     {
-      "processor_type": "betterjungletemples:waterlog_processor"
-    },
-    {
       "processor_type": "betterjungletemples:empty_dispenser_processor"
     },
     {

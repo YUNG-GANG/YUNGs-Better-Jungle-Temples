@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -24,7 +24,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class CaveVineDecorationProcessor extends StructureProcessor {
     public static final CaveVineDecorationProcessor INSTANCE = new CaveVineDecorationProcessor();
-    public static final Codec<CaveVineDecorationProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<CaveVineDecorationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     private final BlockStateRandomizer randomizer = new BlockStateRandomizer(Blocks.AIR.defaultBlockState())
             .addBlock(Blocks.COBBLESTONE_SLAB.defaultBlockState().setValue(SlabBlock.TYPE, SlabType.TOP), 0.05f)

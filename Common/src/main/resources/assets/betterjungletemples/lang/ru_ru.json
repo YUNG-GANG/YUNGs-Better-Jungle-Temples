@@ -1,18 +1,18 @@
 {
   "Use /locate structure betterjungletemples:jungle_temple instead!": "Используйте /locate structure betterjungletemples:jungle_temple вместо этого!",
 
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.title": "Улучшенные храмы джунглей YUNG'а",
+  "text.autoconfig.betterjungletemples-fabric-1_21.title": "Улучшенные храмы джунглей YUNG'а",
 
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples": "Улучшенные храмы джунглей YUNG'а",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples": "Улучшенные храмы джунглей YUNG'а",
 
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.general": "Общие",
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.general.@Tooltip": "Общие настройки",
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.compat": "Совместимость с модами",
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.compat.@Tooltip": "Настройки совместимости с модами",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.general": "Общие",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.general.@Tooltip": "Общие настройки",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.compat": "Совместимость с модами",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.compat.@Tooltip": "Настройки совместимости с модами",
 
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.general.disableVanillaJungleTemples": "Отключить ванильные храмы в джунглях",
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.general.disableVanillaJungleTemples.@Tooltip": "Должны ли быть отключены ванильные храмы в джунглях.",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.general.disableVanillaJungleTemples": "Отключить ванильные храмы в джунглях",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.general.disableVanillaJungleTemples.@Tooltip": "Должны ли быть отключены ванильные храмы в джунглях.",
 
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.compat.pickYourPoisonEnabled": "Включите совместимость с Pick Your Poison",
-  "text.autoconfig.betterjungletemples-fabric-1_20_4.option.betterJungleTemples.compat.pickYourPoisonEnabled.@Tooltip": "Должны ли ядовитые дротики PYP появляться в улучшенных храмах джунглей."
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.compat.pickYourPoisonEnabled": "Включите совместимость с Pick Your Poison",
+  "text.autoconfig.betterjungletemples-fabric-1_21.option.betterJungleTemples.compat.pickYourPoisonEnabled.@Tooltip": "Должны ли ядовитые дротики PYP появляться в улучшенных храмах джунглей."
 }

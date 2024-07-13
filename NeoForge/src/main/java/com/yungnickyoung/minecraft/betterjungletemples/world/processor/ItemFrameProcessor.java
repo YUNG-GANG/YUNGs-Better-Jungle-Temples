@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ItemFrameProcessor extends StructureProcessor {
     public static final ItemFrameProcessor INSTANCE = new ItemFrameProcessor();
-    public static final Codec<StructureProcessor> CODEC = Codec.unit(() -> INSTANCE);
+    public static final MapCodec<StructureProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
     @Override
     public StructureTemplate.StructureEntityInfo processEntity(LevelReader levelReader,
@@ -22,7 +22,7 @@ public class ItemFrameProcessor extends StructureProcessor {
                                                                StructurePlaceSettings structurePlaceSettings,
                                                                StructureTemplate template) {
         if (globalEntityInfo.nbt.getString("id").equals("minecraft:item_frame") || globalEntityInfo.nbt.getString("id").equals("minecraft:glow_item_frame")) {
-            // Used to suppress dumb log spam
+            // Required to suppress dumb log spam
             globalEntityInfo.nbt.putInt("TileX", globalEntityInfo.blockPos.getX());
             globalEntityInfo.nbt.putInt("TileY", globalEntityInfo.blockPos.getY());
             globalEntityInfo.nbt.putInt("TileZ", globalEntityInfo.blockPos.getZ());
