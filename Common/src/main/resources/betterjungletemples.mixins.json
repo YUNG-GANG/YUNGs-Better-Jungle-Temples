@@ -6,7 +6,6 @@
   "mixins": [
     "DisableVanillaJungleTempleMixin",
     "LocateVanillaJungleTempleCommandMixin",
-    "NoVinesInTemplesMixin",
     "accessor.ChunkGeneratorStructureStateAccessor"
   ],
   "injectors": {
