@@ -4,7 +4,6 @@ import com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesCommon
 import com.yungnickyoung.minecraft.betterjungletemples.BetterJungleTemplesNeoForge;
 import com.yungnickyoung.minecraft.betterjungletemples.config.BJTConfigNeoForge;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.NeoForge;
