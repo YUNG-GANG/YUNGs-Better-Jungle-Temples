@@ -1,0 +1,18 @@
+{
+  "Use /locate structure betterjungletemples:jungle_temple instead!": "¡Usá /locate structure betterjungletemples:jungle_temple en su lugar!",
+
+  "text.autoconfig.betterjungletemples-fabric-1_20.title": "Templos en la Jungla Mejorados de YUNG",
+
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples": "Templos en la Jungla Mejorados de YUNG",
+
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.general": "General",
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.general.@Tooltip": "Configuraciones generales",
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.compat": "Compatibilidad con mods",
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.compat.@Tooltip": "Opciones de compatibilidad con otros mods",
+
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.general.disableVanillaJungleTemples": "Desactivar templos de jungla del juego base",
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.general.disableVanillaJungleTemples.@Tooltip": "Define si se deben desactivar los templos de jungla originales de Minecraft.",
+
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.compat.pickYourPoisonEnabled": "Activar compatibilidad con Pick Your Poison",
+  "text.autoconfig.betterjungletemples-fabric-1_20.option.betterJungleTemples.compat.pickYourPoisonEnabled.@Tooltip": "Define si los dardos venenosos de Pick Your Poison deben aparecer en los templos mejorados."
+}
