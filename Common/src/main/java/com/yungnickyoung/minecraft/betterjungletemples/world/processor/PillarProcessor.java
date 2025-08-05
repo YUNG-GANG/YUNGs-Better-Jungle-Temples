@@ -70,7 +70,7 @@ public class PillarProcessor extends StructureProcessor {
                         .pieceMinY(mutable.getY())
                         .pieceMaxY(mutable.getY())
                         .build();
-                levelReader.getChunk(mutable).setBlockState(mutable, this.pillarStates.get(random, ctx), false);
+                levelReader.getChunk(mutable).setBlockState(mutable, this.pillarStates.get(random, ctx), 0);
 
                 // Update to next position
                 mutable.move(Direction.DOWN);

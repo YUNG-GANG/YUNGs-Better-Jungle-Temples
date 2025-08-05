@@ -21,7 +21,7 @@ public class ItemFrameProcessor extends StructureProcessor {
                                                                StructureTemplate.StructureEntityInfo globalEntityInfo,
                                                                StructurePlaceSettings structurePlaceSettings,
                                                                StructureTemplate template) {
-        if (globalEntityInfo.nbt.getString("id").equals("minecraft:item_frame") || globalEntityInfo.nbt.getString("id").equals("minecraft:glow_item_frame")) {
+        if (globalEntityInfo.nbt.getStringOr("id", "").equals("minecraft:item_frame") || globalEntityInfo.nbt.getStringOr("id", "").equals("minecraft:glow_item_frame")) {
             // Required to suppress dumb log spam
             globalEntityInfo.nbt.putInt("TileX", globalEntityInfo.blockPos.getX());
             globalEntityInfo.nbt.putInt("TileY", globalEntityInfo.blockPos.getY());

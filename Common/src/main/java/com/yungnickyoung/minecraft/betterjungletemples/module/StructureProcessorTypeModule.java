@@ -36,5 +36,5 @@ public class StructureProcessorTypeModule {
     public static StructureProcessorType<BlastFurnaceProcessor> BLAST_FURNACE_PROCESSOR = () -> BlastFurnaceProcessor.CODEC;
 
     @AutoRegister("item_frame_processor")
-    public static StructureProcessorType<?> ITEM_FRAME_PROCESSOR = () -> Services.PROCESSORS.itemFrameProcessorCodec();
+    public static StructureProcessorType<?> ITEM_FRAME_PROCESSOR = Services.PROCESSORS::itemFrameProcessorCodec;
 }
