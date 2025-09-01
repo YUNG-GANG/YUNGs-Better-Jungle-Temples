@@ -30,8 +30,8 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoLocal,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().is(Blocks.DISPENSER)) {
-            ListTag items = blockInfoGlobal.nbt().getList("Items", ListTag.TAG_COMPOUND);
+        if (blockInfoGlobal.state().is(Blocks.DISPENSER) && blockInfoGlobal.nbt() != null) {
+            ListTag items = blockInfoGlobal.nbt().getListOrEmpty("Items");
             if (items.isEmpty()) {
                 RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
                 for (int slot = 0; slot < 9; slot++) {
