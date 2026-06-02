@@ -24,7 +24,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Mod integrations
     {
       "weight": 1,
       "element": {

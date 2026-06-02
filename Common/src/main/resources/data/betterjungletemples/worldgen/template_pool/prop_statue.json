@@ -3,7 +3,7 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1000,
+      "weight": 150,
       "element": {
         "location": "betterjungletemples:props/prop_statue_0",
         "ignore_bounds": true,
@@ -13,7 +13,7 @@
       }
     },
     {
-      "weight": 1000,
+      "weight": 150,
       "element": {
         "location": "betterjungletemples:props/prop_statue_1",
         "ignore_bounds": true,
@@ -23,7 +23,157 @@
       }
     },
     {
-      "weight": 1000,
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_2",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_0",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_1",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_2",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_0",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_1",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_2",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_0",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_1",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_2",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_0",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_1",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 150,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_2",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_0",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "location": "betterjungletemples:props/prop_statue_1",
+        "ignore_bounds": true,
+        "processors": "betterjungletemples:main",
+        "projection": "rigid",
+        "element_type": "yungsapi:yung_single_element"
+      }
+    },
+    {
+      "weight": 100,
       "element": {
         "location": "betterjungletemples:props/prop_statue_2",
         "ignore_bounds": true,

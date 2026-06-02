@@ -2,7 +2,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
 import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
-import net.minecraft.MethodsReturnNonnullByDefault;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -17,10 +17,10 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+
+
+
 public class FireballDispenserProcessor extends StructureProcessor {
     public static final FireballDispenserProcessor INSTANCE = new FireballDispenserProcessor();
     public static final MapCodec<FireballDispenserProcessor> CODEC = MapCodec.unit(() -> INSTANCE);

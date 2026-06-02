@@ -3,7 +3,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
-import net.minecraft.MethodsReturnNonnullByDefault;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -18,10 +18,10 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+
+
+
 public class CaveVineDecorationProcessor extends StructureProcessor {
     public static final CaveVineDecorationProcessor INSTANCE = new CaveVineDecorationProcessor();
     public static final MapCodec<CaveVineDecorationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);

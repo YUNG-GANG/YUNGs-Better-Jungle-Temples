@@ -1,6 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.util;
 
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
 
