@@ -7,7 +7,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.arguments.ResourceOrTagKeyArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.commands.LocateCommand;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import org.spongepowered.asm.mixin.Mixin;
@@ -34,7 +34,7 @@ public class LocateVanillaJungleTempleCommandMixin {
         Optional<ResourceKey<Structure>> optional = result.unwrap().left();
         if (BetterJungleTemplesCommon.CONFIG.general.disableVanillaJungleTemples
                 && optional.isPresent()
-                && optional.get().location().equals(ResourceLocation.withDefaultNamespace("jungle_pyramid"))) {
+                && optional.get().identifier().equals(Identifier.withDefaultNamespace("jungle_pyramid"))) {
             throw OLD_JUNGLE_TEMPLE_EXCEPTION.create();
         }
     }

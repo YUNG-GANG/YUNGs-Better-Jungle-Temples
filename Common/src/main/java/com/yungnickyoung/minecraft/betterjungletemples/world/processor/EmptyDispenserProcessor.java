@@ -3,7 +3,7 @@ package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 import com.mojang.serialization.MapCodec;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.betterjungletemples.world.util.ArrowData;
-import net.minecraft.MethodsReturnNonnullByDefault;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -15,10 +15,10 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+
+
+
 public class EmptyDispenserProcessor extends StructureProcessor {
     public static final EmptyDispenserProcessor INSTANCE = new EmptyDispenserProcessor();
     public static final MapCodec<EmptyDispenserProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
@@ -31,7 +31,7 @@ public class EmptyDispenserProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
         if (blockInfoGlobal.state().is(Blocks.DISPENSER)) {
-            ListTag items = blockInfoGlobal.nbt().getList("Items", ListTag.TAG_COMPOUND);
+            ListTag items = blockInfoGlobal.nbt().getListOrEmpty("Items");
             if (items.isEmpty()) {
                 RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
                 for (int slot = 0; slot < 9; slot++) {

@@ -6,7 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandomizer;
 import com.yungnickyoung.minecraft.yungsapi.world.structure.context.StructureContext;
-import net.minecraft.MethodsReturnNonnullByDefault;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.WorldGenRegion;
@@ -19,10 +19,10 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
+
+
+
 public class PillarProcessor extends StructureProcessor {
     public static final MapCodec<PillarProcessor> CODEC = RecordCodecBuilder.mapCodec(instance -> instance
             .group(
@@ -55,7 +55,7 @@ public class PillarProcessor extends StructureProcessor {
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
         if (blockInfoGlobal.state().is(this.targetBlock.getBlock())) {
-            if (levelReader instanceof WorldGenRegion worldGenRegion && !worldGenRegion.getCenter().equals(new ChunkPos(blockInfoGlobal.pos()))) {
+            if (levelReader instanceof WorldGenRegion worldGenRegion && !worldGenRegion.getCenter().equals(ChunkPos.containing(blockInfoGlobal.pos()))) {
                 return blockInfoGlobal;
             }
             RandomSource random = structurePlacementData.getRandom(blockInfoGlobal.pos());
@@ -70,7 +70,7 @@ public class PillarProcessor extends StructureProcessor {
                         .pieceMinY(mutable.getY())
                         .pieceMaxY(mutable.getY())
                         .build();
-                levelReader.getChunk(mutable).setBlockState(mutable, this.pillarStates.get(random, ctx), false);
+                levelReader.getChunk(mutable).setBlockState(mutable, this.pillarStates.get(random, ctx));
 
                 // Update to next position
                 mutable.move(Direction.DOWN);

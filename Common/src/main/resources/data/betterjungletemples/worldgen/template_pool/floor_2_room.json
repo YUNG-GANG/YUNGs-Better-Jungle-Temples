@@ -2,7 +2,6 @@
   "name": "betterjungletemples:floor_2_room",
   "fallback": "minecraft:empty",
   "elements": [
-    // Corridor rooms
     {
       "weight": 20,
       "element": {
@@ -36,7 +35,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Dripstone rooms
     {
       "weight": 20,
       "element": {
@@ -70,7 +68,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Button parkour rooms
     {
       "weight": 12,
       "element": {
@@ -126,7 +123,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Pressure plate rooms
     {
       "weight": 12,
       "element": {
@@ -182,7 +178,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Puzzle rooms
     {
       "weight": 20,
       "element": {
@@ -216,7 +211,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Vine parkour rooms
     {
       "weight": 15,
       "element": {
@@ -261,7 +255,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Water dripleaf parkour rooms
     {
       "weight": 12,
       "element": {
@@ -317,7 +310,6 @@
         "element_type": "yungsapi:yung_single_element"
       }
     },
-    // Mod integrations
     {
       "weight": 60,
       "element": {
