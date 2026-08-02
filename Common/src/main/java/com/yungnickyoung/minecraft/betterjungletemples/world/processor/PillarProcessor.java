@@ -16,14 +16,13 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
 
 
 
-public class PillarProcessor extends StructureProcessor {
+public class PillarProcessor implements StructureProcessor {
     public static final MapCodec<PillarProcessor> CODEC = RecordCodecBuilder.mapCodec(instance -> instance
             .group(
                     BlockState.CODEC.fieldOf("target_block").forGetter(config -> config.targetBlock),
@@ -51,7 +50,7 @@ public class PillarProcessor extends StructureProcessor {
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos templateRelativePos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
         if (blockInfoGlobal.state().is(this.targetBlock.getBlock())) {
@@ -80,7 +79,7 @@ public class PillarProcessor extends StructureProcessor {
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
+    public MapCodec<? extends StructureProcessor> codec() {
         return StructureProcessorTypeModule.PILLAR_PROCESSOR;
     }
 }
