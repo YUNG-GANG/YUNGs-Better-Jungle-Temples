@@ -1,14 +1,12 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
 import com.mojang.serialization.MapCodec;
-import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.yungsapi.world.processor.StructureEntityProcessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,13 +33,14 @@ public class ItemFrameProcessor extends StructureEntityProcessor {
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos blockPos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
         return blockInfoGlobal;
     }
 
-    @Override protected StructureProcessorType<?> getType() {
-        return StructureProcessorTypeModule.ITEM_FRAME_PROCESSOR;
+    @Override
+    public MapCodec<? extends StructureProcessor> codec() {
+        return CODEC;
     }
 }

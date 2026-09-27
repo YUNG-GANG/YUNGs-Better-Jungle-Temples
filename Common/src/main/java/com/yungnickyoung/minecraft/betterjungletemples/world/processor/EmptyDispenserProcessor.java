@@ -1,7 +1,6 @@
 package com.yungnickyoung.minecraft.betterjungletemples.world.processor;
 
 import com.mojang.serialization.MapCodec;
-import com.yungnickyoung.minecraft.betterjungletemples.module.StructureProcessorTypeModule;
 import com.yungnickyoung.minecraft.betterjungletemples.world.util.ArrowData;
 
 import net.minecraft.core.BlockPos;
@@ -12,14 +11,13 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
 
 
 
-public class EmptyDispenserProcessor extends StructureProcessor {
+public class EmptyDispenserProcessor implements StructureProcessor {
     public static final EmptyDispenserProcessor INSTANCE = new EmptyDispenserProcessor();
     public static final MapCodec<EmptyDispenserProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -27,7 +25,7 @@ public class EmptyDispenserProcessor extends StructureProcessor {
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos blockPos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
         if (blockInfoGlobal.state().is(Blocks.DISPENSER)) {
@@ -59,7 +57,8 @@ public class EmptyDispenserProcessor extends StructureProcessor {
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
-        return StructureProcessorTypeModule.EMPTY_DISPENSER_PROCESSOR;
+    @Override
+    public MapCodec<? extends StructureProcessor> codec() {
+        return CODEC;
     }
 }
