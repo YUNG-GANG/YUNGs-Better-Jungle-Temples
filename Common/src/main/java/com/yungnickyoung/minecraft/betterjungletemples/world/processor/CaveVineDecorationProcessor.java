@@ -7,6 +7,7 @@ import com.yungnickyoung.minecraft.yungsapi.api.world.randomize.BlockStateRandom
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CaveVinesBlock;
@@ -15,14 +16,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
 
 
 
-public class CaveVineDecorationProcessor extends StructureProcessor {
+public class CaveVineDecorationProcessor implements StructureProcessor {
     public static final CaveVineDecorationProcessor INSTANCE = new CaveVineDecorationProcessor();
     public static final MapCodec<CaveVineDecorationProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -36,10 +36,10 @@ public class CaveVineDecorationProcessor extends StructureProcessor {
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos templateRelativePos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().is(Blocks.GREEN_STAINED_GLASS)) {
+        if (blockInfoGlobal.state().is(Blocks.STAINED_GLASS.pick(DyeColor.GREEN))) {
             RandomSource randomSource = structurePlacementData.getRandom(blockInfoGlobal.pos());
             BlockState blockState = randomizer.get(randomSource);
 
@@ -56,7 +56,7 @@ public class CaveVineDecorationProcessor extends StructureProcessor {
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
+    public MapCodec<? extends StructureProcessor> codec() {
         return StructureProcessorTypeModule.CAVE_VINE_DECORATION_PROCESSOR;
     }
 }

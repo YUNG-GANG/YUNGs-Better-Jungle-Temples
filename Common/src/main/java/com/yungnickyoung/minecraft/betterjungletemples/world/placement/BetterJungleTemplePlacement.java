@@ -11,13 +11,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.ExtraCodecs;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
 import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
-import net.minecraft.world.level.levelgen.structure.placement.StructurePlacementType;
 
 import java.util.Optional;
 
@@ -58,8 +58,9 @@ public class BetterJungleTemplePlacement extends RandomSpreadStructurePlacement 
     }
 
     @Override
-    public StructurePlacementType<?> type() {
-        return StructurePlacementTypeModule.BETTER_JUNGLE_TEMPLE_PLACEMENT;
+    @SuppressWarnings("unchecked")
+    public MapCodec<RandomSpreadStructurePlacement> codec() {
+        return (MapCodec<RandomSpreadStructurePlacement>) (MapCodec<?>) StructurePlacementTypeModule.BETTER_JUNGLE_TEMPLE_PLACEMENT;
     }
 
     @Override
@@ -74,8 +75,8 @@ public class BetterJungleTemplePlacement extends RandomSpreadStructurePlacement 
                     structurePos.getX(), structurePos.getY(), structurePos.getZ(),
                     48, 2,
                     biomeHolder -> biomeHolder.is(BiomeTags.IS_RIVER) || biomeHolder.is(BiomeTags.IS_OCEAN),
-                    randomState.oreRandom().at(structurePos), true,
-                    randomState.sampler()
+                    RandomSource.create(seed ^ structurePos.asLong()), true,
+                    randomState
             ) != null;
             return !isOceanOrRiverNear;
         }

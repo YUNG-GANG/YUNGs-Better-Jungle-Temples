@@ -8,20 +8,20 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessor;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProcessorType;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
 
 
 
 
-public class FireballDispenserProcessor extends StructureProcessor {
+public class FireballDispenserProcessor implements StructureProcessor {
     public static final FireballDispenserProcessor INSTANCE = new FireballDispenserProcessor();
     public static final MapCodec<FireballDispenserProcessor> CODEC = MapCodec.unit(() -> INSTANCE);
 
@@ -29,10 +29,10 @@ public class FireballDispenserProcessor extends StructureProcessor {
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader,
                                                              BlockPos jigsawPiecePos,
                                                              BlockPos jigsawPieceBottomCenterPos,
-                                                             StructureTemplate.StructureBlockInfo blockInfoLocal,
+                                                             BlockPos templateRelativePos,
                                                              StructureTemplate.StructureBlockInfo blockInfoGlobal,
                                                              StructurePlaceSettings structurePlacementData) {
-        if (blockInfoGlobal.state().is(Blocks.ORANGE_CONCRETE)) {
+        if (blockInfoGlobal.state().is(Blocks.CONCRETE.pick(DyeColor.ORANGE))) {
             BlockState blockState = Blocks.DISPENSER.defaultBlockState().setValue(DispenserBlock.FACING, Direction.UP);
             CompoundTag newNbt = new CompoundTag();
             ListTag items = new ListTag();
@@ -53,7 +53,7 @@ public class FireballDispenserProcessor extends StructureProcessor {
         return blockInfoGlobal;
     }
 
-    protected StructureProcessorType<?> getType() {
+    public MapCodec<? extends StructureProcessor> codec() {
         return StructureProcessorTypeModule.FIREBALL_DISPENSER_PROCESSOR;
     }
 }
